@@ -1,36 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-<style type="text/css">
-iframe {
-	height: 100px;
-	width: 300px;
-}
-</style>
+    <meta charset="ISO-8859-1">
+    <title>Insert title here</title>
+    <style type="text/css">
+        iframe {
+            height: 100px;
+            width: 300px;
+            padding: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            border-radius: 30px;
+        }
+
+        th, td {
+            border: 1px solid #282828;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #1DB954; /* Spotify green color */
+            color: #fff; /* White text color */
+        }
+
+        td.audio-column {
+            padding: 10px 0; /* Adjust the padding as needed */
+        }
+
+        td audio {
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" th:href="@{/css/displaySongsStyle.css}">
 </head>
 <body>
-	<table border>
-		<thead>
-			<tr>
-				<th>Name</th>
-				<th>Artist</th>
-				<th>Genre</th>
-				<th>Play</th>
-			</tr>
-		</thead>
-		<tbody>
-			<tr th:each="song:${songs}">
-				<td th:text="${song.name}"></td>
-				<td th:text="${song.artist}"></td>
-				<td th:text="${song.genre}"></td>
-				<td><audio controls>
-						<source th:src="${song.link}" type="audio/mpeg">
-					</audio>
-				</td>
-			</tr>
-		</tbody>
-	</table>
+<h1>SONGS</h1>
+    <table border>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Artist</th>
+                <th>Genre</th>
+                <th>Play</th>
+                <th>Like</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="song:${songs}">
+                <td th:text="${song.name}"></td>
+                <td th:text="${song.artist}"></td>
+                <td th:text="${song.genre}"></td>
+                <td class="audio-column">
+                    <audio controls>
+                        <source th:src="${song.link}" type="audio/mpeg">
+                    </audio>
+                </td>
+                <td><input type="radio" ></td>
+            </tr>
+        </tbody>
+    </table>
 </body>
 </html>

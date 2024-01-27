@@ -1,0 +1,50 @@
+/* styles.css */
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #121212;
+    color: #fff;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h1 {
+    color: #1DB954;
+    margin-bottom: 20px;
+    font-size:60px;
+}
+
+ul {
+    
+    padding: 0;
+}
+
+li {
+    margin-bottom: 20px;
+}
+
+form {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buy-button {
+    background-color: #1DB954;
+    color: #fff;
+    padding: 15px 30px; /* Increase padding to make the button bigger */
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.buy-button:hover {
+    background-color: #168040;
+}
